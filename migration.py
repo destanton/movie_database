@@ -43,10 +43,7 @@ with open("item.csv") as in_file:
     # contents = list(contents)
     # print(list(contents[1]))
     for row in contents:
-        cursor.execute("INSERT INTO item_info VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);", (
-        row[0], row[1], row[2], row[3], row[4], row[5], row[6], row[7], row[8], row[9], row[10], row[12],
-        row[12], row[13], row[14], row[15], row[16], row[17], row[18], row[19],
-        row[20], row[21], row[22], row[23]))
+        cursor.execute("INSERT INTO item_info VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s,%s);", (row[:]))
 connection.commit()
 
 cursor.execute("DROP TABLE IF EXISTS user_info CASCADE;")
