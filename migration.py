@@ -86,14 +86,8 @@ with open("data.csv") as in_file:
     contents = csv.reader(in_file, delimiter="\t")
     for row in contents:
         cursor.execute("INSERT INTO data_info VALUES (%s, %s, %s, %s);", (row[:]))
+
+
 connection.commit()
-
-
-
-
-
-
-
-
 cursor.close()
 connection.close()
